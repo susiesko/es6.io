@@ -6,20 +6,27 @@
 </head>
 <body>
 <script>
+  // "var" can be recreated; only can be used within function they are created.
+  // "let" is scoped to the block
+
+  var width;
+
   function setWidth() {
-    var width = 100;
+    width = 100;
     console.log(width);
   }
   setWidth();
 
   var age = 100;
-  if(age > 12) {
-    const dogYears = age * 7;
+  if (age > 12){
+    const dogYears = age * 7; 
     console.log(`You are ${dogYears} dog years old!`);
   }
-
+  
   let height = 200;
+  
   const key = 'abc123';
+
 </script>
 </body>
 </html>

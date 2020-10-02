@@ -6,16 +6,30 @@
 </head>
 <body>
 <script>
+  // "const" variables cannot be updated.
   const key = 'abc123';
   let points = 50;
   let winner = false;
 
-  const person = {
+  points = 60;
+
+  // if (points > 40){
+  //   let winner = true; // different winner var than last winner.
+  // }
+
+  const person = { // const obj cannot be reassigned but its properties can.
     name: 'Wes',
     age: 28
-  }
+  };
+
+  person.name = 'test';
+  console.log(person);
 
   const wes = Object.freeze(person);
+
+  console.log(wes); // age is 28
+  wes.age = 20; // doesn't actually change anything because of the freeze above.
+  console.log(wes); // age is 28
 
 </script>
 </body>
