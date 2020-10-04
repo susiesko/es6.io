@@ -8,27 +8,58 @@
 <script>
   const names = ['wes', 'kait', 'lux'];
 
-  const fullNames = names.map(function(name) {
+// old
+  const fullNames = names.map(function(name){
     return `${name} bos`;
   });
 
+// new, fat arrow! 
   const fullNames2 = names.map((name) => {
     return `${name} bos`;
   });
-
+    
+  // hey you don't have to have parantheses around the arguments if you only have 1 argument
   const fullNames3 = names.map(name => {
     return `${name} bos`;
   });
-
+      
+  // hey you can get rid of retun and brackets!
   const fullNames4 = names.map(name => `${name} bos`);
-
+  
+  // no arguments here.
   const fullNames5 = names.map(() => `cool bos`);
 
-  const sayMyName = (name) => {
-    alert(`Hello ${name}!`)
-  }
+  const sayMyName = (name) => { return `Hello ${name}!`};
 
-  sayMyName('Wes');
+console.log(sayMyName('Susie'));
+
+  console.log(fullNames);
+  console.log(fullNames2);
+  console.log(fullNames3);
+  console.log(fullNames4);
+  console.log(fullNames5);
+
+  // const fullNames = names.map(function(name) {
+  //   return `${name} bos`;
+  // });
+
+  // const fullNames2 = names.map((name) => {
+  //   return `${name} bos`;
+  // });
+
+  // const fullNames3 = names.map(name => {
+  //   return `${name} bos`;
+  // });
+
+  // const fullNames4 = names.map(name => `${name} bos`);
+
+  // const fullNames5 = names.map(() => `cool bos`);
+
+  // const sayMyName = (name) => {
+  //   alert(`Hello ${name}!`)
+  // }
+
+  // sayMyName('Wes');
 
 </script>
 </body>

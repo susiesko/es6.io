@@ -61,6 +61,25 @@
   </div>
 
   <script>
+        const box = document.querySelector('.box');
+        box.addEventListener('click', function(){
+          // console.log(this); // this is the target element
+          let first = 'opening';
+          let second = 'open';
+
+          if (this.classList.contains(first)){
+            [ first, second ] = [ second, first ]; // square bracket notation switch values.
+          }
+
+          this.classList.toggle(first);
+          setTimeout(() => {
+            console.log(this);
+            this.classList.toggle(second);
+          }, 500);
+        }); 
+        /* box.addEventListener('click', () => {
+          console.log(this); // this is inherited from parent scope
+        }); */
   </script>
 
 </body>
