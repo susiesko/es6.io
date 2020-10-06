@@ -5,17 +5,38 @@
   <title>Destructuring Arrays</title>
 </head>
 <body>
-<script>
+<script>  
   const details = ['Wes Bos', 123, 'wesbos.com'];
-  const [name, id, website] = details;
+  
+  /* 
+    Gross:
+    const name = details[0];
+    const id = details[1]; 
+    const website = details[2];
+  */
+
+  // Do this instead:
+  const [name, id, website] = details;  
   console.log(name, id, website);
 
   const data = 'Basketball,Sports,90210,23,wes,bos,cool';
+  /*
+    Gross:
+    const itemName = data[0];
+    const category = data[1];
+    const sku = data[2];
+    const inventory = data[3];
+  */
+
+  // Do this instead
   const [itemName, category, sku, inventory] = data.split(',');
 
+  // Destructuring with spread:
   const team = ['Wes', 'Harry', 'Sarah', 'Keegan', 'Riker'];
-
-  const [captain, assistant, ...players] = team;
+  const [captain, assistant, ...players] = team; // gives us a var name 'captain,' a var named 'assistant,' and an array named 'players' with the rest of the array after the first two elements.
+  console.log(captain);
+  console.log(assistant);
+  console.log(players);
 
 </script>
 </body>
