@@ -14,10 +14,14 @@
     sugar: 10
   };
 
-  for (const prop in apple) {
-    const value = apple[prop];
-    console.log(value, prop);
+  for (const prop of Object.keys(apple)){
+    console.log(apple[prop]);
   }
+
+  // for (const prop in apple) {
+  //   const value = apple[prop];
+  //   console.log(value, prop);
+  // }
 
 </script>
 </body>
