@@ -10,6 +10,23 @@
   const person = Symbol('Wes');
 
   const classRoom = {
+    [Symbol('Mark')]: { grade: 50, gender: 'boy'},
+    [Symbol('Olivia')]: { grade: 80, gender: 'girl' },
+    [Symbol('Olivia')]: { grade: 20, gender: 'girl' }
+  };
+
+  for (person in classRoom){
+    console.log(person);
+  }
+
+  const syms = Object.getOwnPropertySymbols(classRoom);
+  console.log(syms);
+  const data = syms.map(sym => classRoom[sym]);
+  console.log(data);
+
+  /* const person = Symbol('Wes');
+
+  const classRoom = {
     [Symbol('Mark')] : { grade: 50, gender: 'male' },
     [Symbol('olivia')]: { grade: 80, gender: 'female' },
     [Symbol('olivia')]: { grade: 80, gender: 'female' },
@@ -21,7 +38,7 @@
 
   const syms = Object.getOwnPropertySymbols(classRoom);
   const data = syms.map(sym => classRoom[sym]);
-  console.log(data);
+  console.log(data); */
 
 </script>
 </body>
