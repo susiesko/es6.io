@@ -19,13 +19,13 @@
   // });
 
   // Promise
-  //   .all([weather, tweets])
+  //   .all([weather, tweets]) // wait for all promises to be resolved; utlimately fires after the slowest Promise is complete.
   //   .then(responses => {
   //     const [weatherInfo, tweetInfo] = responses;
   //     console.log(weatherInfo, tweetInfo)
   //   });
 
-  const postsPromise = fetch('https://wesbos.com/wp-json/wp/v2/posts');
+  const postsPromise = fetch('https://crossorigin.in/https://wesbos.com/wp-json/wp/v2/posts');
   const streetCarsPromise = fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris');
 
   Promise
@@ -35,7 +35,7 @@
     })
     .then(responses => {
       console.log(responses);
-    });
+    }).catch(err => { console.log('hello world'); console.log(err) });
 
 </script>
 </body>

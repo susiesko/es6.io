@@ -6,9 +6,9 @@
 </head>
 <body>
 <script>
-  const p = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      reject(Error('Err wes isn\'t cool'));
+  const p = new Promise((resolve, reject) => {    
+    setTimeout(() => { 
+      reject(Error('Err Wes isn\'t cool'));
     }, 1000);
   });
 
@@ -20,6 +20,25 @@
       console.error(err);
     });
 
+  // const p = new Promise((resolve, reject) => {
+  //   setTimeout(() => {
+  //     reject(Error('Err wes isn\'t cool'));
+  //   }, 1000);
+  // });
+
+  // p
+  //   .then(data => {
+  //     console.log(data);
+  //   })
+  //   .catch(err => {
+  //     console.error(err);
+  //   });
+  function pleaseSleep(miliseconds) { // testing "waiting" in a promise
+   var currentTime = new Date().getTime();
+
+   while (currentTime + miliseconds >= new Date().getTime()) {
+   }
+}
 </script>
 </body>
 </html>
