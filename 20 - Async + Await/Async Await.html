@@ -7,40 +7,76 @@
 
 <body>
   <script>
-    function breathe(amount) {
+    function breathe(amount){
       return new Promise((resolve, reject) => {
-        if (amount < 500) {
-          reject('That is too small of a value');
+        if (amount < 500){
+          reject('That is too small of a value!');
         }
-        setTimeout(() => resolve(`Done for ${amount} ms`), amount);
+        setTimeout(() => resolve(`Done for ${amount} ms!`), amount);
       });
     }
 
-    function catchErrors(fn) {
-      return function (...args) {
+    function catchErrors(fn){
+      return function(...args) {
         return fn(...args).catch((err) => {
-          console.error('Ohhhh nooo!!!!!');
+          console.error('ohhh nooooo!!!!!');
           console.error(err);
         });
       }
     }
 
     async function go(name, last) {
-      console.log(`Starting for ${name} ${last}!`);
+      console.log(`Starting for ${name} ${last}!!!`);
+      console.log('start');
       const res = await breathe(1000);
       console.log(res);
-      const res2 = await breathe(300);
+      const res1 = await breathe(600);
+      console.log(res1);
+      const res2 = await breathe(750);
       console.log(res2);
-      const res3 = await breathe(750);
+      const res3 = await breathe(300);
       console.log(res3);
-      const res4 = await breathe(900);
-      console.log(res4);
       console.log('end');
     }
 
     const wrappedFunction = catchErrors(go);
 
-    wrappedFunction('Wes', 'Bos');
+    wrappedFunction('Susie', 'Rennick');
+
+    // function breathe(amount) {
+    //   return new Promise((resolve, reject) => {
+    //     if (amount < 500) {
+    //       reject('That is too small of a value');
+    //     }
+    //     setTimeout(() => resolve(`Done for ${amount} ms`), amount);
+    //   });
+    // }
+
+    // function catchErrors(fn) {
+    //   return function (...args) {
+    //     return fn(...args).catch((err) => {
+    //       console.error('Ohhhh nooo!!!!!');
+    //       console.error(err);
+    //     });
+    //   }
+    // }
+
+    // async function go(name, last) {
+    //   console.log(`Starting for ${name} ${last}!`);
+    //   const res = await breathe(1000);
+    //   console.log(res);
+    //   const res2 = await breathe(300);
+    //   console.log(res2);
+    //   const res3 = await breathe(750);
+    //   console.log(res3);
+    //   const res4 = await breathe(900);
+    //   console.log(res4);
+    //   console.log('end');
+    // }
+
+    // const wrappedFunction = catchErrors(go);
+
+    // wrappedFunction('Wes', 'Bos');
   </script>
 </body>
 
